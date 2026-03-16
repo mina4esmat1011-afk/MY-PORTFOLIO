@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
 
 ul {
@@ -13,8 +14,14 @@ a {
     color: white;
 }
 
+.container {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 section {
     display: flex;
+    max-width: 100%;
     flex-direction: row;
     margin: 10px;
     padding: 10px;
@@ -57,6 +64,7 @@ section button {
 }
 
 #profile-card {
+    max-width: 100%;
     margin: 10px;
     height: 100%;
     position: relative;
@@ -72,7 +80,7 @@ section button {
 .image-container {
     top: 55px;
     position: relative;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
     margin: 0 auto 20px;
     left: 45px;
@@ -111,6 +119,8 @@ section button {
 
 .my-info span {
     font-weight: bold;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
 }
 
 .skills i {
@@ -127,7 +137,7 @@ section button {
     margin: 10px;
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(4 , auto);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -182,7 +192,7 @@ section button {
 
 .members {
     display: grid;
-    grid-template-columns: repeat(3 ,auto);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content:space-around ;
     text-align: center;
     align-items: center;
@@ -214,4 +224,34 @@ strong {
 .ser-con{
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    section button {
+        width: 100%;
+        max-width: 10em;
+    }
+}
+
+@media (max-width:768px) {
+    #profile-card {
+    max-width: 100%;
+    margin: 125px;
+    height: 100%;
+    position: relative;
+    border: 3px solid;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: 0 4px 8px;
+}
+
 }
